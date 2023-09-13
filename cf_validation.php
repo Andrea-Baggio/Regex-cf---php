@@ -7,7 +7,11 @@ $codiceFiscale = $_POST["codiceFiscale"];
 
 if (preg_match($regex, $codiceFiscale)) {
     echo "Il codice fiscale è valido.";
-} else {
+} 
+else if(strlen($codiceFiscale) < 16) {
+    echo "Il codice fiscale è troppo corto.";
+}
+else {
     echo "Il codice fiscale non è valido.";
 }
 ?>
